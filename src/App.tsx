@@ -55,6 +55,7 @@ interface Project {
   description: string;
   client: string;
   image: string;
+  gallery: string[];
 }
 
 interface ContactFormState {
@@ -88,18 +89,78 @@ const SERVICES: Service[] = [
 ];
 
 const PROJECTS: Project[] = [
-  { id: 'p1', title: 'Total Energies Avonlea', category: 'Petroleum - Construction', description: 'Demolition & Reconstruction of a premium service hub reaching global standards.', client: 'Total Energies Zimbabwe', image: '/frontline-images/site-works.jpg' },
-  { id: 'p2', title: 'Site Rebranding Programme', category: 'Petroleum - Rebranding', description: 'Large-scale rebranding of Total Energies Service Station sites across Zimbabwe.', client: 'Total Energies Zimbabwe', image: '/frontline-images/project-267.jpg' },
-  { id: 'p3', title: 'ZESA Hard Stand Chegutu', category: 'Civil Works', description: 'Construction of a critical 2000m2 hard stand facility in Chegutu.', client: 'ZESA Enterprises', image: '/frontline-images/civil-works.jpg' },
-  { id: 'p4', title: 'Probottlers Plant Extension', category: 'Industrial - Civil', description: 'Plant Extension & Drainage Works for a leading beverage manufacturer.', client: 'Probottlers Zimbabwe', image: '/frontline-images/infrastructure.jpg' },
-  { id: 'p5', title: 'Zuva Chinhoyi Depot', category: 'Petroleum - Refurbishment', description: 'Comprehensive refurbishment of Zuva Petroleum\'s Chinhoyi Depot.', client: 'Zuva Petroleum', image: '/frontline-images/outdoor-works.jpg' },
-  { id: 'p6', title: 'Shelter ZW Drainage', category: 'Civil - Social Housing', description: 'Advanced drainage works and stone pitching for residential infrastructure.', client: 'Shelter Zimbabwe', image: '/frontline-images/project-wa0213.jpg' },
-  { id: 'p7', title: 'Airport Lounge Fit-Out', category: 'Fit-Out Works', description: 'High-specification interior works for RGM International Airport Lounges.', client: 'Aviation Sector', image: '/frontline-images/tiling-project.jpg' },
-  { id: 'p8', title: 'MTC Perimeter Wall', category: 'Construction - Civil', description: 'Extensive perimeter wall and paving for Mashonaland Tobacco Company.', client: 'Mashonaland Tobacco Co.', image: '/frontline-images/houses.jpg' },
-  { id: 'p9', title: 'Polyaok Drainage', category: 'Industrial - Civil', description: 'Structural drainage works for large-scale industrial facility.', client: 'Polyaok Zimbabwe', image: '/frontline-images/construction-equipment.jpg' },
-  { id: 'p10', title: 'Gutu Zvavahera Road', category: 'Roads - Civil Works', description: 'Major regravelling and resurfacing project for national infrastructure.', client: 'Ministry of Transport', image: '/frontline-images/infrastructure.jpg' },
-  { id: 'p11', title: 'RAHA Norton Depot', category: 'Roads - Paving', description: 'Specialized roads regravelling and paving for the Norton Depot.', client: 'RAHA', image: '/frontline-images/civil-works.jpg' },
-  { id: 'p12', title: 'Westwood Girls\' Hostel', category: 'Social Infrastructure', description: 'Construction of a multi-storey hostel for the Red Cross Society.', client: 'Red Cross Zimbabwe', image: '/frontline-images/houses.jpg' },
+  {
+    id: 'p1',
+    title: 'Suspended Ceilings for ZRP Consec',
+    category: 'Fit-Out Works',
+    description: 'Interior suspended ceiling works delivered for ZRP Consec, including clean finishes and site-ready handover.',
+    client: 'ZRP Consec',
+    image: '/frontline-images/projects/zrp-suspended-ceilings-1.jpeg',
+    gallery: ['/frontline-images/projects/zrp-suspended-ceilings-1.jpeg', '/frontline-images/projects/zrp-suspended-ceilings-2.jpeg']
+  },
+  {
+    id: 'p2',
+    title: 'GMB Pothole Patching Project',
+    category: 'Roads - Maintenance',
+    description: 'Pothole patching and surface reinstatement work for safer movement around GMB facilities.',
+    client: 'Grain Marketing Board',
+    image: '/frontline-images/projects/gmb-pothole-patching-1.jpeg',
+    gallery: ['/frontline-images/projects/gmb-pothole-patching-1.jpeg', '/frontline-images/projects/gmb-pothole-patching-2.jpeg']
+  },
+  {
+    id: 'p3',
+    title: 'Timire School Prefab Ablution Block',
+    category: 'Social Infrastructure',
+    description: 'Construction of a prefab ablution block supporting school infrastructure and daily learner needs.',
+    client: 'Timire School',
+    image: '/frontline-images/projects/timire-school-ablution-block-1.jpeg',
+    gallery: ['/frontline-images/projects/timire-school-ablution-block-1.jpeg', '/frontline-images/projects/timire-school-ablution-block-2.jpeg']
+  },
+  {
+    id: 'p4',
+    title: 'Tiling Services for Old Mutual',
+    category: 'Finishes',
+    description: 'Professional tiling works completed for Old Mutual with attention to durability, alignment, and finish quality.',
+    client: 'Old Mutual',
+    image: '/frontline-images/projects/old-mutual-tiling-1.jpeg',
+    gallery: ['/frontline-images/projects/old-mutual-tiling-1.jpeg', '/frontline-images/projects/old-mutual-tiling-2.jpeg']
+  },
+  {
+    id: 'p5',
+    title: "Girls' Hostel for Red Cross Society of Zimbabwe",
+    category: 'Social Infrastructure',
+    description: 'Construction work for a girls hostel supporting the Zimbabwe Red Cross Society and community education.',
+    client: 'Zimbabwe Red Cross Society',
+    image: '/frontline-images/projects/redcross-girls-hostel-1.jpeg',
+    gallery: ['/frontline-images/projects/redcross-girls-hostel-1.jpeg', '/frontline-images/projects/redcross-girls-hostel-2.jpeg']
+  },
+  {
+    id: 'p6',
+    title: 'Ruvheneko Primary School Prefab Classroom Blocks',
+    category: 'Education Infrastructure',
+    description: 'Prefab classroom block construction for Ruvheneko Primary School, expanding practical learning space.',
+    client: 'Ruvheneko Primary School',
+    image: '/frontline-images/projects/ruvheneko-classroom-blocks-1.jpeg',
+    gallery: ['/frontline-images/projects/ruvheneko-classroom-blocks-1.jpeg', '/frontline-images/projects/ruvheneko-classroom-blocks-2.jpeg']
+  },
+  {
+    id: 'p7',
+    title: 'Refurbishments at GMB Msasa House',
+    category: 'Refurbishment',
+    description: 'Refurbishment works at GMB Msasa House, improving building presentation and functional finishes.',
+    client: 'Grain Marketing Board',
+    image: '/frontline-images/projects/gmb-msasa-refurbishments-1.jpeg',
+    gallery: ['/frontline-images/projects/gmb-msasa-refurbishments-1.jpeg', '/frontline-images/projects/gmb-msasa-refurbishments-2.jpeg']
+  },
+  {
+    id: 'p8',
+    title: 'Double Storey Building for Doctor Kadumbo',
+    category: 'Residential Construction',
+    description: 'Construction of a double storey building with structural, masonry, and finishing works.',
+    client: 'Doctor Kadumbo',
+    image: '/frontline-images/projects/doctor-kadumbo-double-storey-1.jpeg',
+    gallery: ['/frontline-images/projects/doctor-kadumbo-double-storey-1.jpeg', '/frontline-images/projects/doctor-kadumbo-double-storey-2.jpeg']
+  },
 ];
 
 const CLIENTS = [
@@ -701,8 +762,20 @@ export default function App() {
                   </div>
                   <h4 className="text-xl font-bold mb-2 group-hover:text-brand-purple transition-colors">{project.title}</h4>
                   <p className="text-text-secondary text-xs mb-6 leading-relaxed line-clamp-2">{project.description}</p>
+                  <div className="grid grid-cols-2 gap-2 mb-6">
+                    {project.gallery.map((image) => (
+                      <img
+                        key={image}
+                        src={image}
+                        alt={`${project.title} project view`}
+                        className="h-20 w-full rounded-xl object-cover border border-border-primary"
+                        loading="lazy"
+                        referrerPolicy="no-referrer"
+                      />
+                    ))}
+                  </div>
                   <div className="flex items-center justify-between mt-auto pt-4 border-t border-border-primary">
-                    <span className="text-[9px] font-bold text-text-secondary uppercase tracking-[0.2em] leading-none">View Case Study</span>
+                    <span className="text-[9px] font-bold text-text-secondary uppercase tracking-[0.2em] leading-none">Project Gallery</span>
                     <ArrowRight className="w-4 h-4 text-brand-gold opacity-0 group-hover:opacity-100 transition-all -translate-x-2 group-hover:translate-x-0" />
                   </div>
                 </div>
@@ -711,7 +784,7 @@ export default function App() {
           </div>
           <div className="mt-8 p-6 bento-card flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="text-[10px] font-black text-text-secondary uppercase tracking-[0.2em] max-w-xl">
-              Also notable: GMB Pothole Patching - ZRP Consec Suspended Ceilings - Old Mutual Tiling - Ruwa Local Board - Ruvheneko School Classrooms - Doctor Kadumbu Residence - Mutual House Electrical - Kwekwe Ceiling Renovations - City Council Projects
+              Project images are grouped from the original Frontline Contracting website so each card shows its matching project photos.
             </div>
             <button 
               onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
