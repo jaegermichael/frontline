@@ -46,6 +46,7 @@ interface Service {
   description: string;
   icon: ReactNode;
   category: string;
+  image: string;
 }
 
 interface Project {
@@ -74,92 +75,112 @@ type ContactStatus = 'idle' | 'error' | 'ready';
 // --- Data ---
 
 const SERVICES: Service[] = [
-  { id: '1', title: 'General Construction', description: 'Masonry, concrete, steel and composite structures for all building types. Delivering quality craftsmanship from substructure to roof completion.', icon: <Building2 className="w-6 h-6" />, category: 'Building' },
-  { id: '2', title: 'Roads & Civil Works', description: 'Regravelling, resurfacing, drainage, hard stands, stone pitching, paving, earthworks, bridges and culverts.', icon: <Route className="w-6 h-6" />, category: 'Infrastructure' },
-  { id: '3', title: 'Electrical & Solar', description: 'Full electrical design, installation and maintenance. Specialists in solar power, geysers and pump systems.', icon: <Zap className="w-6 h-6" />, category: 'Energy' },
-  { id: '4', title: 'Plumbing & Water', description: 'Complete water, waste and gas systems. Water tank supply, installation and connection for residential and industrial properties.', icon: <Droplet className="w-6 h-6" />, category: 'Utilities' },
-  { id: '5', title: 'Roofing & Waterproofing', description: 'Installation of tiles, metal sheets and solar tiles. Full waterproofing systems for flat and pitched roofs.', icon: <ShieldCheck className="w-6 h-6" />, category: 'Specialist' },
-  { id: '6', title: 'Carpentry & Shop Fitting', description: 'Custom displays, shelving, cupboards, floors, ceilings, doors and furniture designed to brand specifications.', icon: <Hammer className="w-6 h-6" />, category: 'Finishes' },
-  { id: '7', title: 'Fit-Out Works', description: 'High-specification commercial and airport lounge fit-outs delivered to global interior standards.', icon: <Drill className="w-6 h-6" />, category: 'Building' },
-  { id: '8', title: 'Structural & Design', description: 'High-rise buildings and specialized engineering structures. Full planning, structural design and build services.', icon: <Building2 className="w-6 h-6" />, category: 'Building' },
-  { id: '9', title: 'Fencing', description: 'Plain wire, barbed, razor, security and palisade fencing for government, schools, and industrial parks.', icon: <Fence className="w-6 h-6" />, category: 'Specialist' },
-  { id: '10', title: 'Painting & Maintenance', description: 'Painting, decoration and 24/7 building maintenance - protecting structures against water, rust and mould.', icon: <PaintBucket className="w-6 h-6" />, category: 'Finishes' },
-  { id: '11', title: 'Petroleum Site Works', description: 'Service station rebranding, demolition, reconstruction and depot refurbishments for energy majors.', icon: <Fuel className="w-6 h-6" />, category: 'Energy' },
-  { id: '12', title: 'Green & Smart Buildings', description: 'Energy efficient infrastructure and intelligent buildings designed for sustainability and long-term value.', icon: <Leaf className="w-6 h-6" />, category: 'Consultancy' },
+  {
+    id: '1',
+    title: 'General Construction',
+    description: 'End-to-end building delivery, from site planning and inspections to roofing, water systems, finishes and final handover.',
+    icon: <Building2 className="w-6 h-6" />,
+    category: 'Building',
+    image: '/frontline-images/desktop/roofing-materials.jpg'
+  },
+  {
+    id: '2',
+    title: 'Civil Works',
+    description: 'Roads, bridges, drainage, earthworks, hard stands, land surveys and infrastructure works built for heavy everyday use.',
+    icon: <Route className="w-6 h-6" />,
+    category: 'Infrastructure',
+    image: '/frontline-images/desktop/bridge-construction.jpg'
+  },
+  {
+    id: '3',
+    title: 'Fit-Out Works',
+    description: 'Commercial interiors, office networks, ceiling works, technical installations and branded spaces prepared for operation.',
+    icon: <Drill className="w-6 h-6" />,
+    category: 'Finishes',
+    image: '/frontline-images/desktop/local-office-network.jpg'
+  },
+  {
+    id: '4',
+    title: 'Structural & Steel Design and Construction',
+    description: 'Structural planning, steel frameworks, fabrication coordination and construction support for durable engineered builds.',
+    icon: <Building2 className="w-6 h-6" />,
+    category: 'Structural',
+    image: '/frontline-images/desktop/frontline-warehouse-facade.jpg'
+  },
 ];
 
 const PROJECTS: Project[] = [
   {
     id: 'p1',
-    title: 'Suspended Ceilings for ZRP Consec',
-    category: 'Fit-Out Works',
-    description: 'Interior suspended ceiling works delivered for ZRP Consec, including clean finishes and site-ready handover.',
-    client: 'ZRP Consec',
-    image: '/frontline-images/projects/zrp-suspended-ceilings-1.jpeg',
-    gallery: ['/frontline-images/projects/zrp-suspended-ceilings-1.jpeg', '/frontline-images/projects/zrp-suspended-ceilings-2.jpeg']
+    title: 'Bridge Construction',
+    category: 'Civil Works',
+    description: 'Bridge and infrastructure works supported by survey control, inspection routines and disciplined site coordination.',
+    client: 'Infrastructure Clients',
+    image: '/frontline-images/desktop/bridge-construction.jpg',
+    gallery: ['/frontline-images/desktop/bridge-construction.jpg', '/frontline-images/desktop/land-surveys.jpg']
   },
   {
     id: 'p2',
-    title: 'GMB Pothole Patching Project',
-    category: 'Roads - Maintenance',
-    description: 'Pothole patching and surface reinstatement work for safer movement around GMB facilities.',
-    client: 'Grain Marketing Board',
-    image: '/frontline-images/projects/gmb-pothole-patching-1.jpeg',
-    gallery: ['/frontline-images/projects/gmb-pothole-patching-1.jpeg', '/frontline-images/projects/gmb-pothole-patching-2.jpeg']
+    title: 'Structural & Steel Planning',
+    category: 'Structural',
+    description: 'Steel-framed construction planning, branded site control and structural coordination before work moves to site.',
+    client: 'Commercial Developers',
+    image: '/frontline-images/desktop/frontline-construction-planning.jpg',
+    gallery: ['/frontline-images/desktop/frontline-construction-planning.jpg', '/frontline-images/desktop/frontline-warehouse-facade.jpg']
   },
   {
     id: 'p3',
-    title: 'Timire School Prefab Ablution Block',
-    category: 'Social Infrastructure',
-    description: 'Construction of a prefab ablution block supporting school infrastructure and daily learner needs.',
-    client: 'Timire School',
-    image: '/frontline-images/projects/timire-school-ablution-block-1.jpeg',
-    gallery: ['/frontline-images/projects/timire-school-ablution-block-1.jpeg', '/frontline-images/projects/timire-school-ablution-block-2.jpeg']
+    title: 'Roofing & Building Envelope',
+    category: 'General Construction',
+    description: 'Roofing material selection and installation planning suited to Southern African weather and long-term durability.',
+    client: 'Residential & Commercial Clients',
+    image: '/frontline-images/desktop/roofing-materials.jpg',
+    gallery: ['/frontline-images/desktop/roofing-materials.jpg', '/frontline-images/desktop/technical-planning.jpg']
   },
   {
     id: 'p4',
-    title: 'Tiling Services for Old Mutual',
-    category: 'Finishes',
-    description: 'Professional tiling works completed for Old Mutual with attention to durability, alignment, and finish quality.',
-    client: 'Old Mutual',
-    image: '/frontline-images/projects/old-mutual-tiling-1.jpeg',
-    gallery: ['/frontline-images/projects/old-mutual-tiling-1.jpeg', '/frontline-images/projects/old-mutual-tiling-2.jpeg']
+    title: 'Fit-Out & Office Networks',
+    category: 'Fit-Out Works',
+    description: 'Office-ready fit-out planning, network layouts and technical services integrated into commercial interiors.',
+    client: 'Corporate Offices',
+    image: '/frontline-images/desktop/local-office-network.jpg',
+    gallery: ['/frontline-images/desktop/local-office-network.jpg', '/frontline-images/desktop/planning-review.jpg']
   },
   {
     id: 'p5',
-    title: "Girls' Hostel for Red Cross Society of Zimbabwe",
-    category: 'Social Infrastructure',
-    description: 'Construction work for a girls hostel supporting the Zimbabwe Red Cross Society and community education.',
-    client: 'Zimbabwe Red Cross Society',
-    image: '/frontline-images/projects/redcross-girls-hostel-1.jpeg',
-    gallery: ['/frontline-images/projects/redcross-girls-hostel-1.jpeg', '/frontline-images/projects/redcross-girls-hostel-2.jpeg']
+    title: 'Electrical System Design',
+    category: 'Technical Works',
+    description: 'Electrical design coordination for industrial and commercial sites where reliability and safety drive the build.',
+    client: 'Industrial Clients',
+    image: '/frontline-images/desktop/electrical-system-design.jpg',
+    gallery: ['/frontline-images/desktop/electrical-system-design.jpg', '/frontline-images/desktop/technical-planning.jpg']
   },
   {
     id: 'p6',
-    title: 'Ruvheneko Primary School Prefab Classroom Blocks',
-    category: 'Education Infrastructure',
-    description: 'Prefab classroom block construction for Ruvheneko Primary School, expanding practical learning space.',
-    client: 'Ruvheneko Primary School',
-    image: '/frontline-images/projects/ruvheneko-classroom-blocks-1.jpeg',
-    gallery: ['/frontline-images/projects/ruvheneko-classroom-blocks-1.jpeg', '/frontline-images/projects/ruvheneko-classroom-blocks-2.jpeg']
+    title: 'Water Tank Installation',
+    category: 'General Construction',
+    description: 'Water storage installations and site plumbing support for practical building operations and resilient utilities.',
+    client: 'Property Owners',
+    image: '/frontline-images/desktop/water-tank-installation.jpg',
+    gallery: ['/frontline-images/desktop/water-tank-installation.jpg', '/frontline-images/desktop/site-inspection.jpg']
   },
   {
     id: 'p7',
-    title: 'Refurbishments at GMB Msasa House',
-    category: 'Refurbishment',
-    description: 'Refurbishment works at GMB Msasa House, improving building presentation and functional finishes.',
-    client: 'Grain Marketing Board',
-    image: '/frontline-images/projects/gmb-msasa-refurbishments-1.jpeg',
-    gallery: ['/frontline-images/projects/gmb-msasa-refurbishments-1.jpeg', '/frontline-images/projects/gmb-msasa-refurbishments-2.jpeg']
+    title: 'Solar Water Heating',
+    category: 'Building Services',
+    description: 'Solar water heating installations that support efficient building operations and lower running costs.',
+    client: 'Residential & Commercial Clients',
+    image: '/frontline-images/desktop/solar-water-heating.jpg',
+    gallery: ['/frontline-images/desktop/solar-water-heating.jpg', '/frontline-images/desktop/roofing-materials.jpg']
   },
   {
     id: 'p8',
-    title: 'Double Storey Building for Doctor Kadumbo',
-    category: 'Residential Construction',
-    description: 'Construction of a double storey building with structural, masonry, and finishing works.',
-    client: 'Doctor Kadumbo',
-    image: '/frontline-images/projects/doctor-kadumbo-double-storey-1.jpeg',
-    gallery: ['/frontline-images/projects/doctor-kadumbo-double-storey-1.jpeg', '/frontline-images/projects/doctor-kadumbo-double-storey-2.jpeg']
+    title: 'Site Inspection & Project Control',
+    category: 'Quality Assurance',
+    description: 'Planning, inspection and field reporting that keep construction work aligned with drawings, safety and scope.',
+    client: 'Project Stakeholders',
+    image: '/frontline-images/desktop/site-inspection.jpg',
+    gallery: ['/frontline-images/desktop/site-inspection.jpg', '/frontline-images/desktop/planning-review.jpg']
   },
 ];
 
@@ -210,11 +231,11 @@ const getAssistantReply = (message: string) => {
   }
 
   if (text.includes('service') || text.includes('build') || text.includes('construction') || text.includes('road') || text.includes('solar') || text.includes('plumb')) {
-    return `We handle ${SERVICES.slice(0, 6).map(service => service.title).join(', ')}, plus fit-out works, petroleum site works, fencing, structural design, maintenance, and green building systems. The contact form can route your enquiry by service.`;
+    return `We handle ${SERVICES.map(service => service.title).join(', ')}. The contact form can route your enquiry by service.`;
   }
 
   if (text.includes('project') || text.includes('client') || text.includes('portfolio') || text.includes('work')) {
-    return `Featured work includes ${PROJECTS.slice(0, 4).map(project => `${project.title} for ${project.client}`).join('; ')}. Our client list includes Total Energies, Zuva Petroleum, ZESA, Old Mutual, ZINARA, Red Cross Zimbabwe, and public-sector partners.`;
+    return `Featured work includes ${PROJECTS.slice(0, 4).map(project => `${project.title} for ${project.client}`).join('; ')}. The gallery highlights construction planning, civil works, fit-outs, building systems and site inspection.`;
   }
 
   if (text.includes('safety') || text.includes('quality') || text.includes('risk') || text.includes('h&s')) {
@@ -512,8 +533,8 @@ export default function App() {
           >
             <div className="absolute inset-0 z-0 overflow-hidden rounded-[24px]">
               <motion.img 
-                src="/frontline-images/project-267.jpg" 
-                alt="Construction Site" 
+                src="/frontline-images/desktop/frontline-construction-planning.jpg" 
+                alt="Frontline construction planning materials on site" 
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
                 style={{ y: heroY }}
@@ -530,7 +551,7 @@ export default function App() {
                 <span className="accent-text text-3xl md:text-5xl block mt-2">Zimbabwe's Award-Winning Construction & Civil Engineering Company.</span>
               </h1>
               <p className="text-gray-200 max-w-xl text-sm leading-relaxed">
-                From Harare to Johannesburg and Lusaka - we deliver general construction, civil works, roads, fit-out and specialist projects to global standards. Serving Total Energies, Zuva Petroleum, Old Mutual, ZESA, ZINARA and Zimbabwe's most trusted brands.
+                From Harare to Johannesburg and Lusaka - we deliver general construction, civil works, fit-out works, and structural and steel design-led construction to global standards.
               </p>
               <div className="flex flex-wrap gap-4 pt-2">
                 <button 
@@ -619,7 +640,7 @@ export default function App() {
             style={{ perspective: 1000 }}
           >
             <h3 className="text-xl font-bold mb-8 flex items-center justify-between">
-              Expertise <span className="text-xs font-mono font-normal text-text-secondary">01/12</span>
+              Expertise <span className="text-xs font-mono font-normal text-text-secondary">01/04</span>
             </h3>
             <ul className="space-y-4">
               {SERVICES.slice(0, 4).map((s, idx) => (
@@ -634,7 +655,7 @@ export default function App() {
                   onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
                   className="text-[10px] font-black uppercase tracking-widest text-text-secondary hover:text-brand-gold transition-colors"
                 >
-                  View All {SERVICES.length} Services
+                  View Services
                 </button>
               </li>
             </ul>
@@ -655,16 +676,16 @@ export default function App() {
             </div>
             <div className="aspect-[16/10] w-full rounded-2xl overflow-hidden mb-6 border border-border-primary relative">
               <img 
-                src="/frontline-images/site-works.jpg" 
-                alt="Total Energies" 
+                src="/frontline-images/desktop/bridge-construction.jpg" 
+                alt="Bridge construction project" 
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 referrerPolicy="no-referrer"
               />
               <div className="absolute inset-0 bg-brand-black/20" />
             </div>
-            <h4 className="font-bold text-lg mb-1 group-hover:text-brand-purple transition-colors">Total Energies Avonlea</h4>
+            <h4 className="font-bold text-lg mb-1 group-hover:text-brand-purple transition-colors">Bridge Construction</h4>
             <p className="text-xs text-text-secondary leading-relaxed">
-              Full demolition & reconstruction of a premium petroleum service hub reaching global standards.
+              Civil works, survey coordination and site inspection aligned for durable infrastructure delivery.
             </p>
           </motion.div>
 
@@ -719,8 +740,8 @@ export default function App() {
             <div className="flex-grow">
               <SectionHeading 
                 badge="PORTFOLIO" 
-                title="Featured Projects" 
-                description="Delivering massive engineering feats and specialized infrastructure works across Southern Africa."
+                title="Project & Capability Gallery" 
+                description="A focused look at the work Frontline is built around: construction, civil works, fit-outs, structural planning and site control."
               />
             </div>
             <motion.a 
@@ -784,7 +805,7 @@ export default function App() {
           </div>
           <div className="mt-8 p-6 bento-card flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="text-[10px] font-black text-text-secondary uppercase tracking-[0.2em] max-w-xl">
-              Project images are grouped from the original Frontline Contracting website so each card shows its matching project photos.
+              Images are matched to the project descriptions from the new Frontline image folder: planning, inspection, civil works, building systems and delivery teams.
             </div>
             <button 
               onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
@@ -826,7 +847,7 @@ export default function App() {
 
         {/* --- Services Section --- */}
         <section id="services" className="mt-20">
-          <SectionHeading badge="CAPABILITIES" title="All Services" description="Detailed engineering solutions tailored for individual, corporate, institutional and government clients." />
+          <SectionHeading badge="CAPABILITIES" title="Core Services" description="Four focused delivery areas for individual, corporate, institutional and government clients." />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {SERVICES.map((s, i) => (
               <motion.div 
@@ -836,12 +857,20 @@ export default function App() {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.05 }}
                 whileHover={{ y: -8 }}
-                className="group relative h-[280px] p-8 rounded-[32px] overflow-hidden bg-bg-secondary border border-border-primary hover:border-brand-purple/40 transition-all duration-500 shadow-sm hover:shadow-xl"
+                className="group relative min-h-[390px] p-6 rounded-[32px] overflow-hidden bg-bg-secondary border border-border-primary hover:border-brand-purple/40 transition-all duration-500 shadow-sm hover:shadow-xl"
               >
                 {/* Background Accent */}
                 <div className="absolute top-0 right-0 w-32 h-32 bg-brand-purple/5 rounded-full translate-x-12 -translate-y-12 group-hover:scale-150 transition-transform duration-700" />
                 
                 <div className="relative z-10 h-full flex flex-col">
+                  <div className="h-28 rounded-2xl overflow-hidden border border-border-primary mb-5 bg-bg-primary">
+                    <img
+                      src={s.image}
+                      alt={`${s.title} service`}
+                      className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      loading="lazy"
+                    />
+                  </div>
                   <div className="w-14 h-14 bg-bg-primary text-brand-purple rounded-2xl flex items-center justify-center mb-6 group-hover:bg-brand-purple group-hover:text-white transition-all duration-500 shadow-sm">
                     {s.icon}
                   </div>
@@ -932,10 +961,16 @@ export default function App() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               whileHover={{ rotateX: -2, rotateY: 5, translateZ: 20 }}
-              className="md:col-span-12 lg:col-span-5 bento-card p-10 flex flex-col justify-center bg-gradient-to-br from-brand-purple to-indigo-950 text-white border-none relative overflow-hidden preserve-3d"
+              className="md:col-span-12 lg:col-span-5 bento-card p-10 flex flex-col justify-end min-h-[560px] text-white border-none relative overflow-hidden preserve-3d"
               style={{ perspective: 1000 }}
             >
-              <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 blur-[80px] rounded-full translate-x-1/3 -translate-y-1/3" />
+              <img
+                src="/frontline-images/desktop/frontline-team-1.jpg"
+                alt="Frontline Contracting site team"
+                className="absolute inset-0 h-full w-full object-cover"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/65 to-slate-950/10" />
               <div className="relative z-10">
                 <div className="inline-flex items-center gap-2 bg-white/20 px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest mb-6 border border-white/20">
                   Building More Than Structures
@@ -1002,6 +1037,9 @@ export default function App() {
                whileHover={{ y: -5 }}
                className="bento-card p-10 flex flex-col justify-between border-l-4 border-l-brand-purple bg-bg-secondary"
             >
+              <div className="h-36 rounded-2xl overflow-hidden border border-border-primary mb-8">
+                <img src="/frontline-images/desktop/site-inspection.jpg" alt="Site inspection checklist" className="h-full w-full object-cover" loading="lazy" />
+              </div>
               <div>
                 <div className="text-brand-purple font-black text-[10px] uppercase tracking-widest mb-4">Safety First</div>
                 <h3 className="text-2xl font-bold mb-4">Health, Safety & Environment</h3>
@@ -1025,6 +1063,9 @@ export default function App() {
                whileHover={{ y: -5 }}
                className="bento-card p-10 flex flex-col justify-between border-l-4 border-l-brand-purple bg-bg-secondary"
             >
+              <div className="h-36 rounded-2xl overflow-hidden border border-border-primary mb-8">
+                <img src="/frontline-images/desktop/technical-planning.jpg" alt="Technical construction planning documents" className="h-full w-full object-cover" loading="lazy" />
+              </div>
               <div>
                 <div className="text-brand-purple font-black text-[10px] uppercase tracking-widest mb-4">Standards</div>
                 <h3 className="text-2xl font-bold mb-4">Quality Assurance</h3>
@@ -1184,8 +1225,8 @@ export default function App() {
           <div className="space-y-6">
             <h4 className="text-xs font-black uppercase tracking-widest text-text-primary">Services</h4>
             <div className="flex flex-col gap-3 text-[11px] font-bold text-text-secondary uppercase tracking-widest">
-              {['General Construction', 'Roads & Civil Works', 'Electrical & Solar', 'Fit-out Works', 'Petroleum works'].map(link => (
-                <a key={link} href="#services" className="hover:text-brand-gold transition-colors">{link}</a>
+              {SERVICES.map(service => (
+                <a key={service.id} href="#services" className="hover:text-brand-gold transition-colors">{service.title}</a>
                ))}
             </div>
           </div>
